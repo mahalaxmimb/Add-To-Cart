@@ -16,26 +16,14 @@
 			values('$name','$ptype','$btype','$image','$desc','$cost')";
 	$result = mysqli_query($conn,$sql);
 	if($result){
-?>
-<br>
-<link rel="stylesheet" href="style.css" >
-<header>
-    <div style="background-color: grey; height: 148px; font-size: 30px;">
-    <p style="position: relative;top: 30%; text-align: center;font-family: monospace;">MyCart.com
-    </p>
-    <br>
-<div class="navbar">
-  <a href="database.php">Home</a>
-  <a href="admin.php">Admin Panel</a>
-  <a href="cart.php">My cart</a>
-</div>
-</div>
-</header>
-<br>
-<?php	echo "successfully inserted record in DB";?>
+	
+		include('header.php');
+	echo "successfully inserted record in DB";?>
 <br>Want to enter another data..?<a href="admin.php">Click here</a>
 <?php
 	}else{
 		echo "error".mysqli_error($conn);
 	}
+
+	include('footer.php');
 ?>
